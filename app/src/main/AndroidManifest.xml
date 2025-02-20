@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.android.wearable.composeadvanced">
+    package="com.wojciechbiskup.workoutapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -31,7 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.example.android.wearable.composeadvanced.MAIN" />
+                <action android:name="om.wojciechbiskup.workoutapp.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

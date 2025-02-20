@@ -14,13 +14,13 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.android.wearable.composeadvanced"
+        applicationId "com.wojciechbiskup.workoutapp"
         minSdk 26
         targetSdk 30
         versionCode 1
         versionName "1.0"
 
-        applicationId "com.example.android.wearable.composeadvanced"
+        applicationId "com.wojciechbiskup.workoutapp"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -51,7 +51,6 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs += "-Xjvm-default=all"
         freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-        // Allow for widescale experimental APIs in Alpha libraries we build upon
         freeCompilerArgs += "-opt-in=androidx.wear.compose.material.ExperimentalWearMaterialApi"
         freeCompilerArgs += "-opt-in=androidx.compose.animation.ExperimentalAnimationApi"
     }
@@ -74,7 +73,6 @@ dependencies {
     def roomVersion = "2.5.2"
     def numberPickerVersion = "1.0.3"
 
-    // General compose dependencies
     implementation composeBom
     implementation libs.androidx.activity.compose
     implementation libs.compose.ui.tooling.preview
@@ -83,39 +81,24 @@ dependencies {
     implementation libs.compose.material.iconscore
     implementation libs.compose.material.iconsext
 
-    // ViewModel
     implementation libs.androidx.lifecycle.viewmodel.ktx
 
-    // Saved state module for ViewModel
     implementation libs.androidx.lifecycle.viewmodel.savedstate
 
     implementation libs.androidx.lifecycle.common.java8
 
-    // Compose for Wear OS Dependencies
-    // Developer Preview currently Alpha, with new releases coming soon.
-    // NOTE: DO NOT INCLUDE a dependency on androidx.compose.material:material.
-    // androidx.wear.compose:compose-material is designed as a replacement not an addition to
-    // androidx.compose.material:material. If there are features from that you feel are missing from
-    // androidx.wear.compose:compose-material please raise a bug to let us know:
-    // https://issuetracker.google.com/issues/new?component=1077552&template=1598429&pli=1
     implementation libs.wear.compose.material
 
-    // Foundation is additive, so you can use the mobile version in your Wear OS app.
     implementation libs.wear.compose.foundation
 
-    // If you are using Compose Navigation, use the Wear OS version (NOT the
-    // androidx.navigation:navigation-compose version), that is, uncomment the line below.
     implementation libs.wear.compose.navigation
     implementation libs.navigation.ui.ktx
 
-    // Performance
     implementation libs.androidx.metrics.performance
 
-    // Google Maps
     implementation libs.com.google.maps.compose
     implementation libs.com.google.play.services.maps
 
-    // Horologist
     implementation libs.horologist.composables
     implementation libs.horologist.compose.layout
     implementation libs.wear.input
@@ -130,7 +113,6 @@ dependencies {
 
     implementation "com.chargemap.compose:numberpicker:$numberPickerVersion"
 
-    // Testing
     testImplementation libs.junit
     androidTestImplementation composeBom
     androidTestImplementation libs.test.ext.junit
